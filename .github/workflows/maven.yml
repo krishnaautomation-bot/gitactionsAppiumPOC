@@ -22,7 +22,5 @@ jobs:
            appium -v  
            appium &>/dev/null &
     - name: Run Appium Tests
-      uses: reactivecircus/android-emulator-runner@v2
-      with:
-        api-level: 29
-        run: adb devices && mvn test
+      run: adb devices
+           mvn test
