@@ -17,6 +17,7 @@ jobs:
     - name: Run Appium Tests
       uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
       with:
-        api-level: 29
+        api-level: 30
         script: ./gradlew connectedCheck
-        run: adb
+        run: adb devices
+             mvn test
