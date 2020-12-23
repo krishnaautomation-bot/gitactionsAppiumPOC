@@ -21,4 +21,4 @@ jobs:
         ndk: 21.0.6113669
         cmake: 3.10.2.4988404
         script: ./gradlew connectedCheck
-        run: mvn test
+        run: mvn verify
