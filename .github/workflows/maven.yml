@@ -22,10 +22,7 @@ jobs:
            appium -v  
            appium &>/dev/null &
     - name: Run Appium Tests
-      uses: reactivecircus/android-emulator-runner@v1 # install and create the Emulator
+      uses: reactivecircus/android-emulator-runner@v2
       with:
-        api-level: ${{ matrix.api-level }}
-        target: ${{ matrix.target }}
-        arch: x86_64
-        profile: Nexus 6
-        run: mvn test
+        api-level: 29
+        run: adb devices && mvn test
