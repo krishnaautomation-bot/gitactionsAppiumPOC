@@ -22,5 +22,6 @@ jobs:
            appium -v  
            appium &>/dev/null &
     - name: Run Appium Tests
-      run: adb devices
+      run: adb
+           adb devices
            mvn test
