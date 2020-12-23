@@ -19,6 +19,8 @@ jobs:
     - name: Install and Run Appium Server
       run: |
             npm install -g appium
+            appium -v
+            appium
     - name: Run Appium Tests
       uses: reactivecircus/android-emulator-runner@v1 # install and create the Emulator
       with:
