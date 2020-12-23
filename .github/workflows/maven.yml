@@ -15,7 +15,10 @@ jobs:
     - name: Install and Run Appium Server
       run: npm install -g appium
     - name: Run Appium Tests
-      uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
+      uses: reactivecircus/android-emulator-runner@v2
       with:
-        api-level: 26
-        run: find ~/.android-sdk/ -name package.xml -exec sh -c 'eval $(xmllint --xpath "//*[local-name()='\'localPackage\'']/@path" $0) && echo $path' {} \;
+        api-level: 29
+        ndk: 21.0.6113669
+        cmake: 3.10.2.4988404
+        script: ./gradlew connectedCheck
+        run: mvn test
