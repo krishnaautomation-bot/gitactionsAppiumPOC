@@ -18,4 +18,4 @@ jobs:
       uses: reactivecircus/android-emulator-runner@v2 # install and create the Emulator
       with:
         api-level: 26
-        run: mvn test
+        run: find ~/.android-sdk/ -name package.xml -exec sh -c 'eval $(xmllint --xpath "//*[local-name()='\'localPackage\'']/@path" $0) && echo $path' {} \;
