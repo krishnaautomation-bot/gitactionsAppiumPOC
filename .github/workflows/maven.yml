@@ -22,6 +22,7 @@ jobs:
        path: ~/.m2
        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
        restore-keys: ${{ runner.os }}-m2
+       
     - name: Install and Run Appium Server
       run: |
         chmod +x ./appium/scripts/RunAppiumServer.sh # install and run appium server in the background
