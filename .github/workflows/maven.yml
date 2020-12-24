@@ -29,6 +29,6 @@ jobs:
         arch: x86_64
         profile: Nexus 6
         #script: ./gradlew test --info # running our test with info to check the results
-        script: ./mvn verify
+        script: mvn verify --file appium/pom.xml
         
         
