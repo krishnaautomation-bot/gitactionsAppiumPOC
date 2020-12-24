@@ -11,6 +11,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -19,7 +21,7 @@ import org.testng.annotations.BeforeClass;
 
 public class Demo {
 
-    AndroidDriver<MobileElement> driver;
+    AndroidDriver driver;
 
     @BeforeMethod
 	@BeforeClass
@@ -36,8 +38,7 @@ public class Demo {
     @Test
     public void test_Appium() throws MalformedURLException, InterruptedException {
         String message = "Hello GitHub Actions";
-        driver.navigate().back();
-        MobileElement messageTxt = driver.findElement(By.id("my_text_field"));
+        WebElement messageTxt = driver.findElement(By.id("my_text_field"));
         messageTxt.sendKeys(message);
         System.out.println(messageTxt.getText());
         Assert.assertEquals(message,messageTxt.getText());
