@@ -23,7 +23,8 @@ jobs:
       run: |          
           xcrun simctl list      
       # Install iOS 11.4 Runtime      
-    - name: Install iOS 11.4 Runtime        
+    - name: check xcode version        
       run: |  
-          gem install xcode-install
-          xcversion simulators --install='iOS 11.4'
+          xcodebuild -version
+          swift --version
+          npm install -g appium
