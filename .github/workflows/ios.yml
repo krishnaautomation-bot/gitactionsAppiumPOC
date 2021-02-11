@@ -28,3 +28,4 @@ jobs:
           xcodebuild -version
           swift --version
           npm install -g appium
+          open -a simulator
