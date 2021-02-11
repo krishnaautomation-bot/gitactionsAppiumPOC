@@ -27,7 +27,4 @@ jobs:
       run: |  
           xcodebuild -version
           swift --version
-          npm install -g appium
-          appium -v
-          appium -p 4723
           open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app/
