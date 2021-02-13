@@ -12,9 +12,6 @@ jobs:
         device:
           - "iPhone 11 Pro (14.3)"
     steps:
-      - name: List all simulators
-        run: xcrun simctl list
-             xcrun simctl create My-appiumsimulator com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-14–3
       # get UUID  simulator and boot a simulator on mac from  command line
       - name: Start Simulator
         run: |
