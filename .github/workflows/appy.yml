@@ -10,4 +10,14 @@ jobs:
     steps:
       # get UUID  simulator and boot a simulator on mac from  command line
       - name: Start Simulator
-        run: xcrun instruments -s   
+        run: xcrun instruments -s  
+      - name: "Start Simulator"
+        run: |
+             UDID=$(
+             xcrun instruments -s |
+             awk \
+             -F ' *[][]' \
+             -v 'device=iPhone 11 (14.3)' \
+             '$1 == device { print $2 }'
+             )
+             xcrun simctl boot "${UDID:?No Simulator with this name found}"   
