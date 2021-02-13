@@ -1,7 +1,6 @@
 name: Pre-Commit E2E Tests in iOS
 on:[push]
 
-jobs:
   build:
     runs-on: macOS-latest
     steps:
