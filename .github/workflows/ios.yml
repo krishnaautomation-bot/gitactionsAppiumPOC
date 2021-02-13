@@ -15,6 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: check xcode version        
-      run: |  
-          xcrun simctl list devices 14.3 | grep -w "iPhone 8 Plus (14.3)" | awk -F "[()]" '{ for (i=2; i<NF; i+=2) print $i }' | grep '^[-A-Z0–9]*$' | xargs -I uuid xcrun simctl boot uuid      
-          xcrun simctl spawn booted log stream — level=debug
+      run: xcrun instruments -s
