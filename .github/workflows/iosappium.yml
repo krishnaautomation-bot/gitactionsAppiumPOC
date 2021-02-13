@@ -1,0 +1,10 @@
+name: Pre-Commit E2E Tests in iOS
+on:[push]
+jobs:
+  build:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: List iOS Devices & Platforms        
+        run: |          
+          xcrun simctl list
