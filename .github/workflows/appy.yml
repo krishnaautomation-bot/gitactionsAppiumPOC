@@ -10,6 +10,4 @@ jobs:
     steps:
       # get UUID  simulator and boot a simulator on mac from  command line
       - name: Start Simulator
-        run: xcrun simctl create My-appiumPhone 
-            | com.apple.CoreSimulator.SimDeviceType.iPhone-11
-            | com.apple.CoreSimulator.SimRuntime.iOS-14–3
+        run: xcrun simctl list devicetypes
