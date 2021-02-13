@@ -14,7 +14,8 @@ jobs:
     steps:
       # get UUID  simulator and boot a simulator on mac from  command line
       - name: Start Simulator
-        run: |
+        run: xcrun simctl list
+         |
           UDID=$(
             xcrun simctl list |
             awk \
