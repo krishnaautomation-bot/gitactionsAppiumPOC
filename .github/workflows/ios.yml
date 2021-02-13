@@ -30,7 +30,7 @@ jobs:
           xcrun simctl list runtimes
           xcrun simctl list devices 14.3
           UDID=$(
-          xcrun simctl -s |
+          xcrun simctl list |
           awk \
             -F ' *[][]' \
             -v 'device=iPhone 8 Plus (14.3)' \
