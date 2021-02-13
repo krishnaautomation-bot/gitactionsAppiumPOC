@@ -11,3 +11,4 @@ jobs:
       # get UUID  simulator and boot a simulator on mac from  command line
       - name: Start Simulator
         run: xcrun instruments -s
+             xcrun simctl boot 3FF2C3EB-B494-4BAB-9909-F797D816E1F0
