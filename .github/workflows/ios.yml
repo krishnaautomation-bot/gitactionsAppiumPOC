@@ -22,9 +22,9 @@ jobs:
     - name: List iOS Devices & Platforms        
       run: |          
           xcrun simctl list      
-      # Install iOS 11.4 Runtime      
+          
     - name: check xcode version        
       run: |  
           xcodebuild -version
           swift --version
-          open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app/
+          xcrun simctl list runtimes
