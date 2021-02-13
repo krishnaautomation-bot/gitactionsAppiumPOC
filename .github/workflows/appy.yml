@@ -10,11 +10,11 @@ jobs:
     steps:
       # get UUID  simulator and boot a simulator on mac from  command line
       - name: Start Simulator
-        run: xcrun simctl devices  
+        run: xcrun simctl list  
       - name: "Start Simulator"
         run: |
              UDID=$(
-             xcrun simctl devices |
+             xcrun simctl list |
              awk \
              -F ' *[][]' \
              -v 'device=iPhone 11 (14.3)' \
