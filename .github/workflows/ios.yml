@@ -36,4 +36,4 @@ jobs:
             -v 'device=iPhone 8 Plus (14.3)' \
             '$1 == device { print $2 }'
           )
-          xcrun simctl boot "${UDID:?No Simulator with this name found}"
+          xcrun simctl list | grep -w "iPhone 8 Plus (14.3)" | awk -F "[()]" '{ for (i=2; i<NF; i+=2) print $i }' | grep '^[-A-Z0–9]*$' | xargs -I uuid xcrun simctl boot uuid
