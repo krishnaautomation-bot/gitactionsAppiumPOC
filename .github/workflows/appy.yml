@@ -23,3 +23,7 @@ jobs:
              xcrun simctl boot "${UDID:?No Simulator with this name found}"   
              xcrun instruments -s
              xcrun simctl list 
+             xcrun simctl delete unavailable
+             xcrun instruments -s
+             xcrun simctl list 
+             
