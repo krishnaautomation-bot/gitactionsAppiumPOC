@@ -10,7 +10,4 @@ jobs:
     steps:
       # get UUID  simulator and boot a simulator on mac from  command line
       - name: Start Simulator
-        run: 
-          xcrun simctl list
-          xcrun simctl delete unavailable
-          xcrun simctl list   
+        run: xcrun simctl delete unavailable   
