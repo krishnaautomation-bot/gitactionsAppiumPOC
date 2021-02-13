@@ -10,13 +10,7 @@ jobs:
     steps:
       # get UUID  simulator and boot a simulator on mac from  command line
       - name: Start Simulator
-        run: xcrun simctl list  
-          |
-          UDID=$(
-            xcrun simctl list |
-            awk \
-              -F ' *[][]' \
-              -v 'device=iPhone 8 Plus' \
-              '$1 == device { print $2 }'
-          )
-          xcrun simctl boot "${UDID:?No Simulator with this name found}"
+        run: xcrun simctl --version
+             xcrun simctl list
+             xcrun simctl list devicetypes runtimes
+             
