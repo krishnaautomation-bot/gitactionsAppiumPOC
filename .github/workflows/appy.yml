@@ -7,20 +7,7 @@ on:
 jobs:
   build:
     runs-on: macos-latest # the machine type
-    strategy: # we are using strategy if we need to run on parallel with different devices and version
-     matrix:
-        device:
-          - "iPhone 11 Pro (14.3)"
     steps:
       # get UUID  simulator and boot a simulator on mac from  command line
       - name: Start Simulator
         run: xcrun simctl list
-         |
-          UDID=$(
-            xcrun simctl list |
-            awk \
-              -F ' *[][]' \
-              -v 'device=${{ matrix.device }}' \
-              '$1 == device { print $2 }'
-          )
-          xcrun simctl boot "${UDID:?No Simulator with this name found}"
