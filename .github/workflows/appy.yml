@@ -10,7 +10,5 @@ jobs:
     steps:
       # get UUID  simulator and boot a simulator on mac from  command line
       - name: Start Simulator
-        run: xcrun simctl --version
-             xcrun simctl list
-             xcrun simctl list devicetypes runtimes
+        run: xcrun simctl list
              
