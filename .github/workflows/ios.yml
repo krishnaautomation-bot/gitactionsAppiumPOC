@@ -27,13 +27,6 @@ jobs:
       run: |  
           xcodebuild -version
           swift --version
-          xcrun simctl list runtimes
-          xcrun simctl list devices 14.3
-          UDID=$(
-          xcrun simctl list |
-          awk \
-            -F ' *[][]' \
-            -v 'device=iPhone 8 Plus (14.3)' \
-            '$1 == device { print $2 }'
-          )
           xcrun simctl list | grep -w "iPhone 8 Plus (14.3)" | awk -F "[()]" '{ for (i=2; i<NF; i+=2) print $i }' | grep '^[-A-Z0–9]*$' | xargs -I uuid xcrun simctl boot uuid
+          xcrun simctl list      
+          
