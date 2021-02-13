@@ -28,3 +28,4 @@ jobs:
           xcodebuild -version
           swift --version
           xcrun simctl list runtimes
+          xcrun simctl list devices 14.3
