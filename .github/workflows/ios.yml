@@ -36,3 +36,4 @@ jobs:
             -v 'device=iPhone 8 Plus (14.3)' \
             '$1 == device { print $2 }'
           )
+          xcrun simctl boot "${UDID:?No Simulator with this name found}"
