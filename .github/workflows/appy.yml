@@ -21,3 +21,5 @@ jobs:
              '$1 == device { print $2 }'
              )
              xcrun simctl boot "${UDID:?No Simulator with this name found}"   
+             xcrun instruments -s
+             xcrun simctl list 
