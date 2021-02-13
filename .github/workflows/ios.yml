@@ -1,18 +1,22 @@
-# This workflow will build a Java project with Maven
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-
-name: Java CI with Maven
-
-on:
-  push:
-    branches: [ master ]
+name:  Build and Test Flutter App
+on: [push,pull_request]
 
 jobs:
-  build:
-
+  test:
     runs-on: macos-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: check xcode version        
-      run: xcrun instruments -s
+      - uses: actions/checkout@v1
+    strategy:
+      matrix:
+        device:
+          - "iPhone 11 (14.3)"
+  run: xcrun instruments -s
+           |
+          UDID=$(
+            xcrun instruments -s |
+            awk \
+              -F ' *[][]' \
+              -v 'device=${{ matrix.device }}' \
+              '$1 == device { print $2 }'
+          )
+          xcrun simctl boot "${UDID:?No Simulator with this name found}"
